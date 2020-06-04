@@ -27,7 +27,7 @@ var arrayUtente = []
 var numeroUtente
 var i = 0;
 // Verifico che il numero non sia una bomba e che ci siano ancora numeri possibili
-while (!arrayBombe.includes(numeroUtente) && i-1 < numeriPossibili) {
+while (!arrayBombe.includes(numeroUtente) && i < numeriPossibili) {
   numeroUtente = parseInt(prompt('Inserire un numero da 1 a ' + limiteRange + ' dove pensi non ci sia una bomba'));
   // Verifico che il valore immesso sia corretto o che non sia già stato scelto precedentemente
   while (numeroUtente < 1 || numeroUtente > limiteRange || isNaN(numeroUtente) || arrayUtente.includes(numeroUtente)) {
@@ -42,7 +42,7 @@ while (!arrayBombe.includes(numeroUtente) && i-1 < numeriPossibili) {
 }
 // Mostro l'esito all'utente in caso di vittoria o sconfitta
 if (i < numeriPossibili) {
-  alert('Che peccato hai perso!!! Hai totalizzato ' + i + ' su ' + numeriPossibili)
+  alert('Che peccato hai perso!!! Hai totalizzato ' + (i-1) + ' su ' + numeriPossibili)
 } else {
   alert('HAI VINTO!!! Hai totalizzato ' + i + ' su ' + numeriPossibili)
 }
